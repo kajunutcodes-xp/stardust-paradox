@@ -1,1 +1,53 @@
-!DOCTYPE
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name ="viewport"content="width=device-width,initial-scale=1.0">
+
+        <title>the stardust paradox</title>
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&display=swap"
+    rel="stylesheet"
+    >
+
+    <link rel= "stylesheet" href="style.css">
+    <script src="script.js" defer> </script>
+    </head>
+
+    <body>
+        <div class="backgrounds" aria-hidden="true">
+            <img class="background active" src= "assets/bg-1.jpg" alt="pictureofgalaxy">
+             <img class="background active" src= "assets/bg-2side.jpg" alt="pictureofgalaxy">
+              <img class="background active" src= "assets/bg-3.jpg" alt="pictureofgalaxy">
+        </div>
+
+        <div class="shade" aria-hidden="true"></div>
+        <div id="stars" aria-hidden="true"></div>
+        
+        <main id="landing">
+            <h1 class="title">
+                <span>the</span>
+                <span>stardust</span>
+                <span>paradox</span>
+            </h1>
+
+            <nav class="menu" aria-label="main menu">
+                <button id="about-button"type="button">about</button>
+                <button id="begin-button"type="button">begin</button>
+            </nav>
+        </main>
+
+         <dialog id="about-dialog">
+    <h2>About</h2>
+    <p>
+      An interactive mystery exploring cosmic origins
+      and human identity.
+    </p>
+
+    <form method="dialog">
+      <button type="submit">Close</button>
+    </form>
+  </dialog>
+</body>
+</html>
