@@ -53,6 +53,8 @@ background:linear-gradient(
     position:relative;
     z-index:3;
     min-height:100svh;
+    justify-content:center;
+    align-items:center;
 }
 
 .title{
@@ -73,10 +75,7 @@ background:linear-gradient(
     transition: left 1.8 ease, width 1.8s ease;
 }
 
-#landing.menu-ready .title{
-    left:27%;
-    width:44%;
-}
+
 
 #landing.menu-ready .title span{
     display:block;
