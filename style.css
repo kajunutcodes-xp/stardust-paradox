@@ -1,11 +1,159 @@
-*{
-    box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
-
 body{
     margin:0;
     background:#03050b;
     color:#f3eee6;
-    font-family:"Cormorant",Georgia,serif;
+   font-family:"Cormorant",Georgia,serif;
 }
 
+.backgrounds,
+.shade,
+#stars{
+    position: fixed;
+    inset:0;
+    pointer-events:none;
+}
+
+.backgrounds{
+    z-index:0;
+}
+
+.background{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    opacity:0;
+    transition:opacity 1.2s ease-in-out;
+}
+
+.background.active{
+ opacity:1;
+}
+
+.shade{
+
+z-index:1;
+background:linear-gradient(
+    90deg,
+    rgba(3,5,11,0.65),
+    rgba(3,5,11,0.3)
+);
+}
+
+#stars{
+    z-index:2;
+}
+
+#landing{
+    position:relative;
+    z-index:3;
+    min-height:100svh;
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width:72%;
+    margin:0;
+
+    transform:translate(-50%,-50%);
+    text-align:center;
+    font-size:clamp(2.5rem,6vw,7rem);
+    font-weight:500;
+    line-height:1.05;
+    text-shadow:0 2px 25px #000;
+
+    animation:title-appear 2s ease both;
+    transition: left 1.8 ease, width 1.8s ease;
+}
+
+#landing.menu-ready .title{
+    left:27%;
+    width:44%;
+}
+
+#landing.menu-ready .title span{
+    display:block;
+}
+
+.menu{
+    position:absolute;
+    top:50%;
+    right:12%;
+    transform:translateY(-50%);
+
+    display:flex;
+    flex-direction:coloumn;
+    gap:1.5rem;
+
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 1.5s ease 1s;
+
+}
+#landing.menu-ready .menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+button {
+  font: inherit;
+  font-size: 1.7rem;
+  color: inherit;
+  background: rgba(3, 5, 11, 0.45);
+  border: 1px solid rgba(243, 238, 230, 0.45);
+  padding: 0.65rem 2.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover,
+button:focus-visible {
+  background: rgba(243, 238, 230, 0.12);
+  box-shadow: 0 0 20px rgba(200, 215, 255, 0.2);
+}
+
+dialog {
+  max-width: min(90vw, 32rem);
+  padding: 2rem;
+  color: #f3eee6;
+  background: #0b1020;
+  border: 1px solid #697185;
+  font-size: 1.4rem;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+@keyframes title-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* On narrow screens, put the menu beneath the title. */
+@media (max-width: 650px) {
+  #landing.menu-ready .title {
+    top: 35%;
+    left: 50%;
+    width: 90%;
+  }
+
+  .menu {
+    top: 70%;
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+.centered-heading {
+  text-align: center;
+}
