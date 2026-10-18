@@ -35,7 +35,7 @@ const introSteps = [
   },
 
 {
-  text:"yapyapyap"
+  text:"yapyapyap",
   credit:"",
   button:"enter the observatory"
 }
@@ -86,7 +86,7 @@ function unlockIntro() {
     storyContent.classList.add("visible");
 
     setTimeout(unlockIntro, 1000);
-  }, 1600);
+  }, 3100);
 });
 
 storyNext.addEventListener("click", () => {
@@ -122,3 +122,5 @@ storyNext.addEventListener("click", () => {
     }
   }, 1100);
 });
+
+
