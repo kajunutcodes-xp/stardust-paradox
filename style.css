@@ -157,3 +157,112 @@ dialog::backdrop {
   text-align: center;
 }
 
+[hidden] {
+  display: none!important;
+}
+
+#story-screen{
+  position:fixed;
+  inset:0;
+  z-index:10;
+  background:#03050b;
+
+  display:grid;
+  place-items: center;
+  padding: 2rem;
+
+  opacity:0;
+  transition: opacity 1.5s ease;
+
+
+}
+
+#story-screen.visible{
+  opacity:1;
+}
+
+#story-text{
+  margin:0;
+  font-size:clamp(1.8rem, 4vw, 3rem);
+  line-height:1.4;
+  white-space:pre-line;
+}
+
+#story-credit{
+  font-size:1.3rem;
+  margin:1rem 0 0;
+}
+
+
+#story-next{
+  margin-top:2.5rem;
+}
+
+#story-next:disabled{
+  cursor: default;
+
+}
+
+#room{
+  position;fixed;
+  inset:0;
+  z-index:11;
+  background:#03050b
+  
+  opacity:0;
+  transition: opacity 2s ease;
+
+
+}
+
+#room.visible {
+  opacity: 1;
+}
+
+.room-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
