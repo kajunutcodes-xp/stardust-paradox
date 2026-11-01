@@ -175,14 +175,18 @@ function startTelescopeOpening() {
 
 
 
-function revealTelescopeSky (){
-  telescopeWait(2100, ()=> {
+function revealTelescopeSky() {
+  
+  telescopeWait(2100, () => {
+    telescopeScreen.classList.add("sky-ready");
+  });
+
+  
+  telescopeWait(4200, () => {
     telescopeScreen.classList.add("controls-ready");
     analyseButton.disabled = false;
-
   });
 }
-
 
 analyseButton.addEventListener("click", () => {
   if (analyseButton.disabled) return;
