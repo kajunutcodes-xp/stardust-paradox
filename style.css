@@ -263,7 +263,7 @@ dialog::backdrop {
 
   }
 
-  #telescope-screen.sky-ready #skyview{
+  #telescope-screen.sky-ready #sky-view{
     opacity:1;
   }
 
@@ -292,7 +292,7 @@ dialog::backdrop {
   left:1rem;
   }
 
-  #analyze-button{
+  #analyse-button{
 
   position:absolute;
     z-index:3;
@@ -316,18 +316,18 @@ dialog::backdrop {
   #spectrum-panel{
     position: absolute;
     z-index:2;
-    bottom:5%
+    bottom:5%;
     left:50%;
     width: min(88vw, 42rem);
     padding:1.3rem;
 
     background:rgba(3,5,11,0.94);
-    border: 1px solid rgba(243,238,230,0.35)
+    border: 1px solid rgba(243,238,230,0.35);
     text-align:center;
 
     opacity:0;
     visibility:hidden;
-    transform:translate(-50%, 1rem)
+    transform:translate(-50%, 1rem);
     transition:opacity 2s ease, transform 2s ease;
 
 
