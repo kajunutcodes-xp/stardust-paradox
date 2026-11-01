@@ -308,7 +308,13 @@ dialog::backdrop {
 
   }
 
-  #telescope-screen.zooming #analyze-button{
+  #telescope-screen.controls-ready #analyse-button {
+  opacity: 1;
+  visibility: visible;
+} 
+
+
+  #telescope-screen.zooming #analyse-button{
     opacity:0;
     visibility:hidden;
   }

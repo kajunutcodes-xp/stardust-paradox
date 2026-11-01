@@ -70,40 +70,44 @@
         </button>
     </section>
 
-    <section id="telescope-screen" hidden aria-label="telescope view">
-        <div id="sky-view">
-            <img
-            id="sky-picture"
-            src="assets/night-skywoa.png"
-            alt="a very nice picture of the sky woa"
-            >
+   <section id="telescope-screen" hidden aria-label="Telescope view">
+  <div id="sky-view">
+    <img
+      id="sky-picture"
+      src="assets/night-skywoa.png"
+      alt="A view of the night sky."
+    >
+  </div>
 
-            <button id="telescope-back" type="button">
-                back to room
-            </button>
+  <button id="telescope-back" type="button">
+    back to room
+  </button>
 
-            <button id="analyse-button"type="button">
-                analyse the target star
-            </button>
+  <button id="analyse-button" type="button">
+    analyse the target star
+  </button>
 
-            <div id="spectrum-panel">
-                <h2>the recorded spectrum from target star</h2>
+  <div id="spectrum-panel">
+    <h2>the recorded spectrum from the target star: </h2>
 
-                <div class="spectrum-strip"
-                role="img"
-                aria-label="a spectrum of light that are emmisions from the star"
-                <span style="--x: 12%; --colour: #a78bfa;"></span>
-             <span style="--x: 26%; --colour: #657aff;"></span>
-         <span style="--x: 40%; --colour: #58d5ee;"></span>
-     <span style="--x: 55%; --colour: #83e8a0;"></span>
+    <div
+      class="spectrum-strip"
+      role="img"
+      aria-label="light emmisions from a star"
+    >
+      <span style="--x: 12%; --colour: #a78bfa;"></span>
+      <span style="--x: 26%; --colour: #657aff;"></span>
+      <span style="--x: 40%; --colour: #58d5ee;"></span>
+      <span style="--x: 55%; --colour: #83e8a0;"></span>
       <span style="--x: 71%; --colour: #f5d675;"></span>
       <span style="--x: 87%; --colour: #f07676;"></span>
-            </div>
-        </div>
+    </div>
 
-        <p id="spectrum-caption">
-            compare these bright lines of light coming from the star with the reference patterns on the astronomy chart
-        </p>
+    <p id="spectrum-caption">
+      match these bright lines to the chart to see which chemical elements are in the star.
+    </p>
+  </div>
+</section>
+
 </body>
 </html>
-
