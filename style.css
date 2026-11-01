@@ -157,9 +157,8 @@ dialog::backdrop {
   text-align: center;
 }
 
-[hidden] {
-  display: none!important;
-}
+
+
 
 #story-screen{
   position:fixed;
@@ -210,7 +209,7 @@ dialog::backdrop {
   background:#03050b;
   
   opacity:0;
-  transition: opacity 2s ease;
+  transition: opacity 4s ease;
 
 
 }
@@ -223,9 +222,97 @@ dialog::backdrop {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
+
+[hidden] {
+  display: none!important;
+}
+
+#telescope-button{
+  position:absolute;
+  left:73%;
+  top:48%;
+  transform:translate(-50%,-50%);
+}
+
+  #telescope-screen{
+    position:fixed;
+    inset:0;
+    z-index:20;
+    overflow:hidden;
+    background:#03050b;
+    opacity:0;
+    transition: opacity 3s ease;
+
+
+  }
+
+  #telescope-screen.visible{
+  opacity:1;
+
+  }
+
+  #sky-view{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    opacity:0;
+    transition: opacity 3s ease;
+
+  }
+
+  #telescope-screen.sky-ready #skyview{
+    opacity:1;
+  }
+
+
+  #sky-picture {
+    display: block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+
+    transform:scale(1);
+    transform-origin:50% 50%;
+    transition: transform 4s ease-in-out;
+  
+  }
+
+  #telescope-screen.zooming #sky-picture{
+    transform:scale(2.5);
+  
+  }
+
+  #telescope-back{
+    position:absolute;
+    z-index:3;
+  top: 1rem;
+  left:1rem;
+  }
+
+  #analyze-button{
+
+  position:absolute;
+    z-index:3;
+  bottom: 10%;
+  left:50%;
+  transform:translateX(-50%);
+
+  opacity:0;
+  visibility: hidden;
+  transition:opacity 2s ease;
+
+
+  }
+
+
+  
+
+
+  
+
 
 
 

@@ -118,7 +118,7 @@ storyNext.addEventListener("click", () => {
 
       setTimeout(() => {
         storyScreen.hidden = true;
-      }, 2100);
+      }, 4100);
     }
   }, 1100);
 });
