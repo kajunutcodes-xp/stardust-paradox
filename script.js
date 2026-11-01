@@ -124,3 +124,95 @@ storyNext.addEventListener("click", () => {
 });
 
 
+const telescopeButton = document.getElementById("telescope-button");
+const telescopeScreen = document.getElementById("telescope-screen");
+const telescopeBack = document.getElementById("telescope-back");
+const analyseButton = document.getElementById("analyse-button");
+
+
+let telescopeTimers=[];
+let telescopeClosing = false;
+
+
+function telescopeWait (delay, action) {
+  const timer = setTimeout(action, delay);
+  telescopeTimers.push(timer);
+
+}
+
+function cancelTelescopeTimers(){
+  telescopeTimers.forEach((timer)=> clearTimeout (timer));
+  telescopeTimers=[];
+}
+
+
+telescopeButton.addEventListener("click", ()=> {
+  cancelTelescopeTimers();
+
+  telescopeClosing = false;
+  telescopeScreen.className ="";
+  telescopeScreen.hidden=false;
+  telescopeBack.disabled = false;
+  analyseButton.disabled = true;
+
+  startTelescopeOpening();
+
+}
+)
+
+function startTelescopeOpening() {
+  requestAnimationFrame(()=> {
+    requestAnimationFrame(()=> {
+      if (telescopeClosing) return;
+
+      telescopeScreen.classList.add("visible");
+
+      revealTelescopeSky();
+      });
+    });
+}
+
+
+
+
+function revealTelescopeSky (){
+  telescopeWait(2100, ()=> {
+    telescopeScreen.classList.add("controls-ready");
+    analyseButton.disabled = false;
+
+  });
+}
+
+
+analyseButton.addEventListener("click", () => {
+  if (analyseButton.disabled) return;
+
+    analyseButton.disabled = true;
+  telescopeScreen.classList.add("zooming");
+
+    telescopeWait(4100, () => {
+     telescopeScreen.classList.add("spectrum-ready");
+  });
+
+  telescopeWait(6400, () => {
+    telescopeScreen.classList.add("caption-ready");
+  });
+});
+
+
+telescopeBack.addEventListener("click", () =>{
+  if (telescopeClosing)return;
+
+  telescopeClosing = true;
+  cancelTelescopeTimers();
+
+  telescopeBack.disabled = true;
+  analyseButton.disabled = true;
+  telescopeScreen.classList.remove("visible");
+
+  telescopeWait(2100, () => {
+    telescopeScreen.hidden = true;
+    telescopeScreen.className = "";
+    telescopeButton.focus();
+  });
+});
