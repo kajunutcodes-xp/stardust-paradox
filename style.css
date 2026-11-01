@@ -305,10 +305,90 @@ dialog::backdrop {
   transition:opacity 2s ease;
 
 
+
   }
 
+  #telescope-screen.zooming #analyze-button{
+    opacity:0;
+    visibility:hidden;
+  }
 
-  
+  #spectrum-panel{
+    position: absolute;
+    z-index:2;
+    bottom:5%
+    left:50%;
+    width: min(88vw, 42rem);
+    padding:1.3rem;
+
+    background:rgba(3,5,11,0.94);
+    border: 1px solid rgba(243,238,230,0.35)
+    text-align:center;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translate(-50%, 1rem)
+    transition:opacity 2s ease, transform 2s ease;
+
+
+     }
+
+   #telescope-screen.spectrum-ready #spectrum-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+#spectrum-panel h2 {
+  margin: 0 0 1rem;
+  font-size:1.5rem;
+  font-weight:500;
+}
+
+.spectrum-strip {
+  position: relative;
+  height: 70px;
+  background: #000;
+  border: 1px solid #343b49;
+  overflow: hidden;
+}
+
+.spectrum-strip span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--x);
+  width: 3px;
+
+     background: var(--colour);
+   box-shadow: 0 0 10px var(--colour);
+
+  opacity: 0;
+  transform: scaleY(0);
+  transition: opacity 2s ease, transform 2s ease;
+    }
+
+#telescope-screen.spectrum-ready .spectrum-strip span {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+#spectrum-caption{
+  margin: 1rem 0 0;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.4;
+
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+#telescope-screen.caption-ready #spectrum-caption {
+  opacity: 1;
+}
+
+
+
+
 
 
   
