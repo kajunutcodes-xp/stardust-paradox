@@ -392,10 +392,54 @@ dialog::backdrop {
   opacity: 1;
 }
 
+#calender-button {
+  position:absolute;
+  left:9%;
+  top:19%;
+  transform:translate(-50%,-50%);
+  font-size:clamp(0.85rem, 1.6vw, 1.4rem);
+  padding:0.5rem, 1rem;
+
+}
+
+#calender-screen{
+  position:fixed;
+  inset:0;
+  z-index:20;
+  background:rgba(3,5,11,0.55)
+  opacity:0;
+  transition: opacity 0.6s ease;
+
+}
+
+#calender-screen.visible{
+  opacity:1;
+}
 
 
+#calender-picture {
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:85%;
+  height:80%;
+  object-fit:contain;
+   transform:translate(-50%,-50%);
+   opacity:0;
+   transition: opacity 0.8s ease;
 
+}
 
+#calender-screen.picture-ready #calender-picture{
+  opacity:1;
+}
+
+#calender-back{
+  position:absolute;
+  top:1rem;
+  left:1rem;
+  z-index:1;
+}
 
   
 
