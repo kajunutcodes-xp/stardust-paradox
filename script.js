@@ -243,14 +243,14 @@ calenderButton.addEventListener("click", ()=>{
 
 
 
-function revealCalendar() {
+function revealCalender() {
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-  if (calendarClosing) return;
-    calendarScreen.classList.add("visible");
+  if (calenderClosing) return;
+    calenderScreen.classList.add("visible");
 
-      calendarTimer = setTimeout(() => {
-        calendarScreen.classList.add("picture-ready");
+      calenderTimer = setTimeout(() => {
+        calenderScreen.classList.add("picture-ready");
       }, 650);
      });
        });
