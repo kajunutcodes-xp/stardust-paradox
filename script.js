@@ -220,3 +220,56 @@ telescopeBack.addEventListener("click", () =>{
     telescopeButton.focus();
   });
 });
+
+const calenderButton=document.getElementById("calender-button");
+const calenderScreen= document.getElementById("calender-screen");
+const calenderBack =document.getElementById("calender-back");
+
+let calenderTimer;
+let calenderClosing= false;
+
+
+
+calenderButton.addEventListener("click", ()=>{
+  clearTimeout(calenderTimer);
+
+  calenderClosing=false;
+  calenderBack.disabled = false;
+  calenderScreen.classList.remove("visible","picture-ready");
+  calenderScreen.hidden=false;
+
+  revealCalender();
+});
+
+
+
+function revealCalendar() {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+  if (calendarClosing) return;
+    calendarScreen.classList.add("visible");
+
+      calendarTimer = setTimeout(() => {
+        calendarScreen.classList.add("picture-ready");
+      }, 650);
+     });
+       });
+    
+      }
+
+
+
+      calenderBack.addEventListener("click", ()=>{
+        if (calenderClosing) return;
+        calenderClosing = true;
+        clearTimeout(calenderTimer);
+        calenderBack.disabled = true;
+
+        calenderScreen.classList.remove("visible");
+
+        calenderTimer = setTimeout (()=>{
+          calenderScreen.hidden = true;
+          calenderScreen.classList.remove("picture-ready");
+          calenderButton.focus();
+        }, 650);
+      });
