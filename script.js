@@ -282,7 +282,7 @@ function revealCalender() {
   const logbookPicture= document.getElementById("logbook-picture")
   const logbookPrev = document.getElementById("logbook-prev")
   const logbookNext = document.getElementById("logbook-next")
-  const logbookPageNumber=document.getElementById(logbook-page-number)
+  const logbookPageNumber=document.getElementById("logbook-page-number")
 
 
   const logbookPages =[
@@ -292,14 +292,14 @@ function revealCalender() {
     "assets/logbook-4.jpg"
   ];
 
-  let currentLohbookPge=0;
+  let currentLogbookPge=0;
   let logbookTimer;
   let logbookClosing=false;
 
   function updateLogbookPage (){
     logbookPicture.src=logbookPages[currentLogbookPage];
 
-  logbook.Picture.alt=
+  logbookPicture.alt=
   `Research logbook,page ${currentLogbookPage + 1} of 4.`;
 
   logbookPageNumber.textContent =

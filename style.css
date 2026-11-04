@@ -446,7 +446,7 @@ dialog::backdrop {
   position:absolute;
   left:43%;
   top:87%;
-  transform:translate(-50%, -50%)
+  transform:translate(-50%, -50%);
   font-size:clamp(0.85rem, 1.6vw, 1.4rem);
   padding:0.5rem 1rem;
 }
@@ -455,7 +455,7 @@ dialog::backdrop {
   position:fixed;
   inset:0;
   z-index:20;
-  background:rgba(3,5,11,0.55)
+  background:rgba(3,5,11,0.55);
   opacity:0;
   transition:opacity 0.6s ease;
 
@@ -484,7 +484,7 @@ dialog::backdrop {
   align-items:center;
   gap:0.6rem;
 
-  opacity:0.6rem;
+  opacity:0;
   transition:opacity 0.8s ease;
 }
 
