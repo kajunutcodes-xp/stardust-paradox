@@ -72,6 +72,10 @@
         <button id="calender-button" type="button">
           view calender
           </button>
+
+          <button id="logbook-button" type="button">
+            read logbook
+          </button>
     </section>
 
    <section id="telescope-screen" hidden aria-label="Telescope view">
@@ -123,6 +127,36 @@
   <button id="calender-back" type="button">
     back to room
   </button>
+  </section>
+
+  <section id="logbook-screen" hidden aria-label="research logbook">
+    <button id="logbook-close"type="button">
+      close logbook
+    </button>
+
+    <div id="logbook-content">
+      <img
+      id="logbook-picture"
+      src="assets/logbook-1.jpg"
+      alt="the first page of the logbook">
+
+      <nav class="logbook-navigation" aria-label="logbook pages">
+        <button id="logbook-prev" type="button"
+        aria-label="previous page" disabled >
+        ←
+      
+      </button>
+
+      <span id="logbook-page-number" aria-live="polite">
+        1/4
+      </span>
+
+      <button id="logbook-next" type="button"
+      aria-label="next page">
+       →
+  </button>
+      </nav>
+    </div>
   </section>
 
 </body>
