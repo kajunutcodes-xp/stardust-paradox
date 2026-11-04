@@ -273,3 +273,92 @@ function revealCalender() {
           calenderButton.focus();
         }, 650);
       });
+
+ 
+
+  const  logbookButton= document.getElementById("logbook-button")
+  const logbookScreen=document.getElementById("logbook-screen")
+  const logbookClose = document.getElementById("logbook-close")
+  const logbookPicture= document.getElementById("logbook-picture")
+  const logbookPrev = document.getElementById("logbook-prev")
+  const logbookNext = document.getElementById("logbook-next")
+  const logbookPageNumber=document.getElementById(logbook-page-number)
+
+
+  const logbookPages =[
+    "assets/logbook-1.jpg",
+    "assets/logbook-2.jpg",
+    "assets/logbook-3.jpg",
+    "assets/logbook-4.jpg"
+  ];
+
+  let currentLohbookPge=0;
+  let logbookTimer;
+  let logbookClosing=false;
+
+  function updateLogbookPage (){
+    logbookPicture.src=logbookPages[currentLogbookPage];
+
+  logbook.Picture.alt=
+  `Research logbook,page ${currentLogbookPage + 1} of 4.`;
+
+  logbookPageNumber.textContent =
+    `${currentLogbookPage + 1}/ ${logbookPages.length}`;
+
+  logbookPrev.disabled = currentLogbookPage === 0;
+
+  logbookNext.disabled =
+  currentLogbookPage === logbookPages.length -1;
+
+
+  }
+
+
+  logbookButton.addEventListener("click", ()=>{
+    clearTimeout(logbookTimer);
+
+    currentlogbookPage=0;
+    logbookClosing=false;
+    updateLogbookPage();
+
+    logbookClose.disabled= false;
+    logbookScreen.classList.remove("visible", "picture-ready");
+    logbookScreen.hidden=false;
+
+    requestAnimationFrame(()=>{
+      requestAnimationFrame(()=>{
+        if(logbookClosing) return;
+        logbookScreen.classList.add("visible");
+
+        logbookTimer= setTimeout(()=>{
+          logbookScreen.classList.add("picture-ready");
+
+        },650);
+      });
+    });
+
+  });
+
+  logbookNext.addEventListener ("click"()=> {
+    if(currentLogbookPage < logbookPages.length -1) {
+      currentLogbookPage++;
+      updateLogbookPage();
+
+    }
+  });
+
+
+  logbookClose.addEventListener("click",()=>{
+  if (logbookClosing) return;
+
+  logbookClosing = true;
+  clearTimeout(logbookTimer);
+  logbookClose.disabled = true;
+  logbookScreen.classList.remove("visible");
+
+  logbookTimer = setTimeout(()=>{
+     logbookScreen.hidden = true;
+    logbookScreen.classList.remove("picture-ready");
+    logbookButton.focus();
+  }, 650);
+   });
