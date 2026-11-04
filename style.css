@@ -441,7 +441,89 @@ dialog::backdrop {
   z-index:1;
 }
 
+
+#logbook-button{
+  position:absolute;
+  left:43%;
+  top:87%;
+  transform:translate(-50%, -50%)
+  font-size:clamp(0.85rem, 1.6vw, 1.4rem);
+  padding:0.5rem 1rem;
+}
+
+#logbook-screen{
+  position:fixed;
+  inset:0;
+  z-index:20;
+  background:rgba(3,5,11,0.55)
+  opacity:0;
+  transition:opacity 0.6s ease;
+
+}
   
+#logbook-screen.visible{
+  opacity:1;
+}
+
+#logbook-close{
+  position:absolute;
+  top:1rem;
+  left:1rem;
+  z-index:1;
+}
+
+#logbook-content{
+  position:absolute;
+  top:5rem;
+  right:5%;
+  bottom:1rem;
+  left:5%;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.6rem;
+
+  opacity:0.6rem;
+  transition:opacity 0.8s ease;
+}
+
+#logbook-screen.picture-ready #logbook-content{
+  opacity:1;
+}
+
+#logbook-picture{
+  display:block;
+  width:100%;
+  flex:1;
+  min-height:0;
+  object-fit:contain;
+}
+
+
+.logbook-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.logbook-navigation button {
+  padding: 0.2rem 0.8rem;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.logbook-navigation button:disabled {
+  opacity: 0.3;
+  cursor: default;
+  box-shadow: none;
+}
+  
+    #logbook-page-number{
+      font-size:1.3rem;
+    }
 
 
 
