@@ -526,12 +526,53 @@ dialog::backdrop {
     }
 
 
+    #chart-button{
+      position:absolute;
+      left:38%;
+      top:22%;
+      transform: translate(-50%,-50%)
+      font-size:clamp(0.85rem,1.6vw,1.4rem);
+      padding:0.5rem 1rem;
+    }
 
 
+    #chart-screen{
+      position:fixed;
+      inset:0;
+      z-index:20;
+      background:rgba(3, 5, 11, 0.55)
+      opacity:0;
+      transition:opacity 0.6s ease;
 
+    }
 
+    #chart-screen.visible{
+      opacity:0;
+    }
 
+#chart-picture{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:85%;
+  height:80%;
+  object-fit:contain;
+  transform:translate(-50%, -50%)
+  opacity:0;
+   transition:opacity 0.6s ease;
+}
 
+#chart-screen.picture-ready #chart-picture{
+  opacity:1;
+
+}
+
+#chart-back{
+  position:absolute;
+  top:1rem;
+  left:1rem;
+  z-index:1;
+}
 
 
 
