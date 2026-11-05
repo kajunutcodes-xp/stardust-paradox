@@ -371,4 +371,44 @@ function revealCalender() {
   }
   });
 
+ const chartButton= document.getElementById("chart-button");
+ const chartScreen = document.getElementById("chart-screen");
+ const chartBack=document.getElementById("chart-back")
+
+ let chartTimer;
+ let chartClosing=false;
+
+ chartButton.addEventListener("click", ()=>{
+  clearTimeout(chartTimer)
+
+  chartClosing=false;
+  chartBack.disabled=false;
+  chartScreen.classList.remove("visible", "picture-ready" );
+  chartScreen.hidden=false;
+  
+  requestAnimationFrame(()=>{
+    requestAnimationFrame(()=>{
+        if (chartClosing) return;
  
+        chartScreen.classList.add("visible");
+
+        chartTimer = setTimeout(()=>{
+        chartScreen.classList.add("picture-ready");
+      }, 650);
+      });
+    });
+      });
+     chartBack.addEventListener("click", ()=>{
+      if(chartClosing) return;
+
+      chartClosing=true;
+      clearTimeout(chartTimer);
+      chartBack.disabled=true;
+
+      chartScreen.classList.remove("visible");
+      chartTimer=setTimeout (()=>{
+        chartScreen.hidden=true;
+        chartScreen.classList.remove("picture-ready");
+        chartButton.focus();
+      },650);
+     });
