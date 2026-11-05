@@ -292,7 +292,7 @@ function revealCalender() {
     "assets/logbook-4.jpg"
   ];
 
-  let currentLogbookPge=0;
+  let currentLogbookPage=0;
   let logbookTimer;
   let logbookClosing=false;
 
@@ -317,7 +317,7 @@ function revealCalender() {
   logbookButton.addEventListener("click", ()=>{
     clearTimeout(logbookTimer);
 
-    currentlogbookPage=0;
+    currentLogbookPage=0;
     logbookClosing=false;
     updateLogbookPage();
 
@@ -339,7 +339,7 @@ function revealCalender() {
 
   });
 
-  logbookNext.addEventListener ("click"()=> {
+  logbookNext.addEventListener ("click", ()=> {
     if(currentLogbookPage < logbookPages.length -1) {
       currentLogbookPage++;
       updateLogbookPage();
@@ -362,3 +362,13 @@ function revealCalender() {
     logbookButton.focus();
   }, 650);
    });
+
+
+   logbookPrev.addEventListener("click",()=>{
+  if (currentLogbookPage > 0){
+    currentLogbookPage--;
+    updateLogbookPage();
+  }
+  });
+
+ 
