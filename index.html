@@ -81,6 +81,10 @@
           <button id="chart-button" type="button">
             view reference chart
           </button>
+
+          <button id="compare-button" type="button" hidden>
+            compare all these findings
+          </button>
     </section>
 
    <section id="telescope-screen" hidden aria-label="Telescope view">
@@ -175,5 +179,34 @@
       back to room
     </button>
   </section>
-    </body>
+
+  <dialog id="compare-dialog" arialabelledby="compare-question">
+    <p id="compare-question">
+      Are you sure you're ready to move on? This can be a lot, but take your time..
+    </p>
+
+    <form method="dialog">
+      <button type="submit" value="cancel" autofocus>not yet</button>
+      <button type="submit" value="continue"> yes </button>
+      </form>
+    </dialog>
+
+    <section id="ending-screen" hidden aria-label="ending">
+      <div id="ending-beat">
+        <img id="ending-picture" alt="" hidden>
+       <p id="ending-text"></p>
+       </div>
+
+       <div id="ending-credits"hidden>
+        <h2> the stardust paradox</h2>
+        <p> made with love by ayesha>
+          <p>my credits here</p>
+       </div>
+
+       <button id="restart-button" type="button" hidden>
+        one more time? 𐔌՞ ܸ.ˬ.ܸ՞𐦯
+       </button>
+      </div>
+    </section>   
+   </body>
 </html>

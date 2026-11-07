@@ -540,14 +540,14 @@ dialog::backdrop {
       position:fixed;
       inset:0;
       z-index:20;
-      background:rgba(3, 5, 11, 0.55)
+      background:rgba(3, 5, 11, 0.55);
       opacity:0;
       transition:opacity 0.6s ease;
 
     }
 
     #chart-screen.visible{
-      opacity:0;
+      opacity:1;
     }
 
 #chart-picture{
@@ -557,7 +557,7 @@ dialog::backdrop {
   width:85%;
   height:80%;
   object-fit:contain;
-  transform:translate(-50%, -50%)
+  transform:translate(-50%, -50%);
   opacity:0;
    transition:opacity 0.6s ease;
 }
