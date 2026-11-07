@@ -412,3 +412,91 @@ function revealCalender() {
         chartButton.focus();
       },650);
      });
+
+  const compareButton = document.getElementById("compare-button");
+  const compareDialog = document.getElementById("compare-dialog");
+  const endingScreen = document.getElementById("ending-screen");
+  const endingBeat = document.getElementById("ending-beat");
+  const endingPicture = document.getElementById("ending-picture");
+  const endingText = document.getElementById("ending-text");
+  const endingCredits = document.getElementById("ending-credits");
+  const restartCredits = document.getElementById("restart-credits") ;
+  
+  
+  const endingBeats = [
+    {
+    text:"my firstline\n my second"
+    hold:4500
+    },
+   {
+    text: "[A beat with a picture]",
+    image: "assets/night-skywoa.png",
+    alt: "A view of the night sky",
+    hold: 5500
+  },
+  {
+    text: "[Your final reveal goes here]",
+    hold: 6500
+  }
+];
+
+const waitForEnding = (ms) =>
+   new Promise((resolve) => setTimeout(resolve, ms));
+
+compareButton.addEventListener("click", () => {
+  compareDialog.returnValue="",
+  compareDialog.showModal();
+});
+
+ compareDialog.addEventListener("close", async()=>{
+  if (compareDialog.returnValue !== "continue") return;
+  endingScreen.hidden=false;
+
+  await new Promise ((resolve) =>{
+    requestAnimationFrame(()=> requestAnimationFrame(resolve));
+  });
+
+  endingScreen.classList.add("visible");
+  await waitForEnding(1400);
+  document.getElementById("room").hidden=true;
+
+  for (const beat of endingBeats){
+     endingText.textContent = beat.text;
+    endingPicture.hidden = true;
+
+    if (beat.image) {
+      endingPicture.src = beat.image;
+      endingPicture.alt = beat.alt || "";
+ try {
+        await endingPicture.decode();
+        endingPicture.hidden = false;
+      } catch {
+  }
+
+  }
+
+    endingBeat.classList.add("visible");
+    await waitForEnding(800 + beat.hold);
+
+    endingBeat.classList.remove("visible");
+    await waitForEnding(800);
+  }
+
+   endingBeat.hidden = true;
+  endingCredits.hidden = false;
+  endingCredits.classList.add("rolling");
+});
+
+endingCredits.addEventListener("animationend", (event) => {
+  if (event.animationName !== "roll-credits") return;
+
+  endingCredits.hidden = true;
+  restartButton.hidden = false;
+  restartButton.focus();
+});
+
+restartButton.addEventListener("click", () => {
+  window.location.reload();
+});
+
+compareButton.hidden = false;   
