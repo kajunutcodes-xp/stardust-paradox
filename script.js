@@ -200,6 +200,7 @@ analyseButton.addEventListener("click", () => {
 
   telescopeWait(6400, () => {
     telescopeScreen.classList.add("caption-ready");
+    markClueFound("spectrum");
   });
 });
 
@@ -251,6 +252,7 @@ function revealCalender() {
 
       calenderTimer = setTimeout(() => {
         calenderScreen.classList.add("picture-ready");
+        markClueFound("calendar");
       }, 650);
      });
        });
@@ -305,6 +307,10 @@ function revealCalender() {
   logbookPageNumber.textContent =
     `${currentLogbookPage + 1}/ ${logbookPages.length}`;
 
+    logbookPagesSeen.add(currentLogbookPage);
+if (logbookPagesSeen.size === logbookPages.length) {
+ markClueFound("logbook");
+}
   logbookPrev.disabled = currentLogbookPage === 0;
 
   logbookNext.disabled =
@@ -394,6 +400,7 @@ function revealCalender() {
 
         chartTimer = setTimeout(()=>{
         chartScreen.classList.add("picture-ready");
+        markClueFound("chart");
       }, 650);
       });
     });
@@ -420,12 +427,12 @@ function revealCalender() {
   const endingPicture = document.getElementById("ending-picture");
   const endingText = document.getElementById("ending-text");
   const endingCredits = document.getElementById("ending-credits");
-  const restartCredits = document.getElementById("restart-credits") ;
+  const restartButton = document.getElementById("restart-button") ;
   
   
   const endingBeats = [
     {
-    text:"my firstline\n my second"
+    text:"my firstline\n my second",
     hold:4500
     },
    {
@@ -499,4 +506,10 @@ restartButton.addEventListener("click", () => {
   window.location.reload();
 });
 
-compareButton.hidden = false;   
+const cluesFound = new Set();
+const logbookPagesSeen = new Set();
+
+function markClueFound(clue) {
+  cluesFound.add(clue);
+  compareButton.hidden = cluesFound.size < 4;
+}
