@@ -574,18 +574,79 @@ dialog::backdrop {
   z-index:1;
 }
 
+#compare-button{
+  position:absolute;
+  bottom:5%;
+  left:50%;
+  translate:translateX(-50%);
+}
+
+#compare-dialog::backdrop{
+  background:rgba(0,0,0,0.55);
+}
+
+#ending-screen{
+  position:fixed;
+  inset:0;
+  z-index:30;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:black;
+  color: #f3eee6;
+  opacity:0;
+  translate:opacity 1.5s ease;
+}
+
+
+#ending-screen.visible,
+#ending-beat.visible{
+  opacity:1;
+}
+  
+#ending-beat{
+  width: min(90%, 46rem);
+  text-align:center;
+  opacity:0;
+  transition:opacity 0.8s ease;
+
+}
+
+#ending-picture{
+  display:block;
+  max-width:100%;
+  max-height:  50vh;
+  margin:0 auto 1rem;
+  object-fit:contain;
+
+}
+
+
+#ending-text{
+  font-size:clamp(1.4rem, 3vw, 2.4rem);
+  white-space:pre-line;
+}
 
 
 
+#ending-credits{
+  position;absolute;
+top:100%;
+width:100%;
+padding:2rem;
+text-align: center;
+font-size:1.5rem;
+}
 
+#ending-credits.rolling{
+  animation;roll-credits 25s linear forwards;
+}
 
-
-
-
-
-
-
-
+@keyframes roll-credits{
+  to{
+    transform:translateY(calc(-100vh -100%));
+  }
+}
 
 
 
