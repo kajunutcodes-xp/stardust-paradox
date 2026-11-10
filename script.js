@@ -28,14 +28,16 @@ aboutButton.addEventListener("click",()=> {
 
 const introSteps = [
   {
-    text:"[my chosen carl sagan quote]",
+    text:""The cosmos is within us. We are made of star-stuff. We are a way for the universe to know itself."",
     credit:"-Carl Sagan",    
     button:"go on." 
     
   },
 
 {
-  text:"yapyapyap",
+  text:"The observatory closed in March 1944.
+        The last observation however, was never filed.
+        But everything is still in there.",
   credit:"",
   button:"enter the observatory"
 }
