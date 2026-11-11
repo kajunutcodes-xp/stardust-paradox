@@ -1,3 +1,4 @@
+
 const backgrounds = document.querySelectorAll(".background");
 let currentBackground = 0;
 
@@ -28,16 +29,14 @@ aboutButton.addEventListener("click",()=> {
 
 const introSteps = [
   {
-    text:""The cosmos is within us. We are made of star-stuff. We are a way for the universe to know itself."",
+    text:"The cosmos is within us. We are made of star-stuff. We are a way for the universe to know itself.",
     credit:"-Carl Sagan",    
     button:"go on." 
     
   },
 
 {
-  text:"The observatory closed in March 1944.
-        The last observation however, was never filed.
-        But everything is still in there.",
+ text: "This observatory closed in August 1944.\nThe last observation however, was never filed.\nBut all the evidence is still in there.",
   credit:"",
   button:"enter the observatory"
 }
@@ -434,17 +433,17 @@ if (logbookPagesSeen.size === logbookPages.length) {
   
   const endingBeats = [
     {
-    text:"my firstline\n my second",
+    text:"Even after a star dies, it's light tells us what it left behind.\n Calcium. Iron. The same elements found in bone and blood.",
     hold:4500
     },
    {
-    text: "[A beat with a picture]",
+    text: "Long before Earth formed, stars made and scattered these elements.\n New worlds formed from that material.On one of them, we began to breathe.",
     image: "assets/night-skywoa.png",
     alt: "A view of the night sky",
     hold: 5500
   },
   {
-    text: "[Your final reveal goes here]",
+    text: "You wondered what was left when a star died.\n You never expected to be part of the answer, did you? ",
     hold: 6500
   }
 ];

@@ -639,7 +639,7 @@ font-size:1.5rem;
 }
 
 #ending-credits.rolling{
-  animation:roll-credits 25s linear forwards;
+  animation:roll-credits 40s linear forwards;
 }
 
 @keyframes roll-credits{
